@@ -5,6 +5,9 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import "./blog-post-html.css";
+
+import { Button, Box, Typography, Grid, Container } from "@material-ui/core";
 
 export const BlogPostTemplate = ({
   content,
@@ -16,31 +19,32 @@ export const BlogPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content;
 
+  //note for future: {content} is a string containing html
+  const hastags = tags && tags.length;
+  //{helmet || ""}
   return (
-    <section>
-      {helmet || ""}
-      <div>
-        <div>
-          <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul>
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      {helmet}
+      <Box my={3}>
+        <Typography variant="h4">{title}</Typography>
+        <Typography variant="body1">{description}</Typography>
+        <Typography variant="body1">
+          <PostContent content={content} />
+        </Typography>
+      </Box>
+      {hastags && (
+        <Box my={6} display="flex">
+          <Typography variant="body2">Keywords: </Typography>
+          {tags.map((tag) => (
+            <Box mx={0.5}>
+              <Link to={`/tags/${kebabCase(tag)}/`}>
+                <Typography variant="body2">{tag} </Typography>
+              </Link>
+            </Box>
+          ))}
+        </Box>
+      )}
+    </>
   );
 };
 
@@ -57,22 +61,24 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-      />
+      <Container>
+        <BlogPostTemplate
+          content={post.html}
+          contentComponent={HTMLContent}
+          description={post.frontmatter.description}
+          helmet={
+            <Helmet titleTemplate="%s | Klimatsekretariatet">
+              <title>{`${post.frontmatter.title}`}</title>
+              <meta
+                name="description"
+                content={`${post.frontmatter.description}`}
+              />
+            </Helmet>
+          }
+          tags={post.frontmatter.tags}
+          title={post.frontmatter.title}
+        />
+      </Container>
     </Layout>
   );
 };

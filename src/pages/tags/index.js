@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
 
+import { Button, Box, Typography, Grid, Container } from "@material-ui/core";
+
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
@@ -13,21 +15,20 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <section>
+    <Container>
       <Helmet title={`Tags | ${title}`} />
-      <div>
-        <h1>Tags</h1>
-        <ul>
-          {group.map((tag) => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+      <Box>
+        <Typography variant="h4">Tags</Typography>
+
+        {group.map((tag) => (
+          <Link key={tag.fieldValue} to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            <Typography variant="body1" justify="center">
+              {tag.fieldValue} ({tag.totalCount})
+            </Typography>
+          </Link>
+        ))}
+      </Box>
+    </Container>
   </Layout>
 );
 
