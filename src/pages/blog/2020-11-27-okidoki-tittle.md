@@ -9,4 +9,6 @@ tags:
   - oki
   - doki
 ---
+![body image](/img/blog-index.jpg "body image title")
+
 okidoki body
