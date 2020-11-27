@@ -2,12 +2,5 @@ import React from "react";
 import Layout from "../components/Layout";
 
 export default function Index() {
-  return (
-    <Layout>
-      <div>
-        <h1>this is the indexpage</h1>
-        <p>paragraph.</p>
-      </div>
-    </Layout>
-  );
+  return <Layout>home</Layout>;
 }

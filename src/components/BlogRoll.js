@@ -13,7 +13,7 @@ class BlogRoll extends React.Component {
     return (
       <Grid container spacing={3}>
         {posts.map(({ node: post }) => (
-          <Grid item xs={6} key={post.id}>
+          <Grid item xs={12} key={post.id}>
             <Box
               my={3}
               padding={3}
