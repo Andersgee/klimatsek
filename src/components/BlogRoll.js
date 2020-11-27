@@ -3,44 +3,54 @@ import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
+import { Button, Box, Typography, Grid } from "@material-ui/core";
+
 class BlogRoll extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div>
-        {posts &&
-          posts.map(({ node: post }) => (
-            <div key={post.id}>
-              {/* post.frontmatter.featuredpost */}
-              <article>
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div>
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <p>
-                    <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                    <span> &bull; </span>
-                    <span>{post.frontmatter.date}</span>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <Link to={post.fields.slug}>Keep Reading →</Link>
-                </p>
-              </article>
-            </div>
-          ))}
-      </div>
+      <Grid container spacing={3}>
+        {posts.map(({ node: post }) => (
+          <Grid item xs={6} key={post.id}>
+            <Box
+              my={3}
+              padding={3}
+              bgcolor="#fafafa"
+              height="100%"
+              display="flex"
+              justifyContent="space-between"
+              flexDirection="column"
+            >
+              <Box>
+                {post.frontmatter.featuredimage && (
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.frontmatter.featuredimage,
+                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                    }}
+                  />
+                )}
+                {/* post.frontmatter.featuredpost */}
+                <Typography variant="h6">{post.frontmatter.title}</Typography>
+                <Typography variant="body1">{post.excerpt}</Typography>
+                <Typography variant="body2">{post.frontmatter.date}</Typography>
+              </Box>
+              <Box display="flex" justifyContent="flex-end">
+                <Button
+                  href={post.fields.slug}
+                  variant="contained"
+                  color="primary"
+                  disableElevation
+                >
+                  Keep Reading
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
     );
   }
 }

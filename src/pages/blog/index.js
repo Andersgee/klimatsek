@@ -3,16 +3,15 @@ import React from "react";
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
 
+import { Container } from "@material-ui/core";
+
 export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div>
-          <h1>this is the blogpage</h1>
-        </div>
-        <section>
+        <Container>
           <BlogRoll />
-        </section>
+        </Container>
       </Layout>
     );
   }
