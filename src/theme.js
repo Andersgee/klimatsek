@@ -33,13 +33,20 @@ const c6 = "#88bbd6"; //fresh water
 const c7 = "#cdcdcd"; //plaster
 const c8 = "#e9e9e9"; //linen
 
+const bgcolor = "#EEF8F8";
+
+const ksbluelight = "#3548b0";
+const ksblue = "#283583";
+const ksbluedark = "#243075";
+const ksred = "#FF3F63";
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: c6,
-      main: c6,
-      dark: c1,
-      contrastText: "#000",
+      light: ksbluedark,
+      main: ksblue,
+      dark: ksbluelight,
+      contrastText: "#fff",
     },
     secondary: {
       light: c5,
@@ -66,8 +73,8 @@ const theme = createMuiTheme({
       contrastText: "rgba(0, 0, 0, 0.87)",
     },
     background: {
-      default: c6,
-      paper: c8,
+      default: "#EEF8FF",
+      paper: "#fafafa",
     },
     text: {
       primary: "rgba(0, 0, 0, 0.87)",

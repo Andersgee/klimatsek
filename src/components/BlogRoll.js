@@ -4,8 +4,10 @@ import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 import { Button, Box, Typography, Grid } from "@material-ui/core";
+import Card from "./Card";
 
 class BlogRoll extends React.Component {
+  //post.frontmatter.featuredpost
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
@@ -13,11 +15,9 @@ class BlogRoll extends React.Component {
     return (
       <Grid container spacing={3}>
         {posts.map(({ node: post }) => (
-          <Grid item xs={12} key={post.id}>
+          <Grid item xs={12} lg={6} key={post.id}>
             <Box
-              my={3}
-              padding={3}
-              bgcolor="#fafafa"
+              bgcolor="#fff"
               height="100%"
               display="flex"
               justifyContent="space-between"
@@ -32,19 +32,26 @@ class BlogRoll extends React.Component {
                     }}
                   />
                 )}
-                {/* post.frontmatter.featuredpost */}
-                <Typography variant="h6">{post.frontmatter.title}</Typography>
-                <Typography variant="body1">{post.excerpt}</Typography>
-                <Typography variant="body2">{post.frontmatter.date}</Typography>
+                <Box mx={2} mt={1}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {post.frontmatter.title}
+                  </Typography>
+                  <Typography variant="body2" color="textPrimary" component="p">
+                    {post.excerpt}
+                  </Typography>
+                  <Typography variant="body2">
+                    {post.frontmatter.date}
+                  </Typography>
+                </Box>
               </Box>
-              <Box display="flex" justifyContent="flex-end">
+              <Box mb={2} mx={2} display="flex" justifyContent="space between">
                 <Button
                   href={post.fields.slug}
                   variant="contained"
                   color="primary"
                   disableElevation
                 >
-                  Keep Reading
+                  Läs Mer
                 </Button>
               </Box>
             </Box>
