@@ -21,30 +21,28 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <Container>
-          <Box my={3}>
-            <Grid container justify="space-around" spacing={3}>
-              <Grid item xs={8}>
-                <BlogRoll />
-              </Grid>
-              <Grid item xs={4}>
-                <Typography>
-                  <TwitterTimelineEmbed
-                    sourceType="profile"
-                    screenName="klimsek"
-                    options={{ height: "200vh" }}
-                    //noHeader
-                    noFooter
-                    //noBorders
-                    noScrollbar
-                    //transparent
-                    //onComplete={action}
-                  />
-                </Typography>
-              </Grid>
-            </Grid>
-          </Box>
-        </Container>
+        <Grid container justify="space-around" spacing={3}>
+          <Grid item xs={8}>
+            <BlogRoll />
+          </Grid>
+          <Grid item xs={4}>
+            <Box bgcolor="#fff">
+              <Typography>
+                <TwitterTimelineEmbed
+                  sourceType="profile"
+                  screenName="klimsek"
+                  options={{ height: "200vh" }}
+                  noHeader
+                  noFooter
+                  noBorders
+                  noScrollbar
+                  transparent
+                  //onComplete={action}
+                />
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
       </Layout>
     );
   }

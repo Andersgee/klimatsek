@@ -15,20 +15,18 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <Container>
-      <Helmet title={`Tags | ${title}`} />
-      <Box>
-        <Typography variant="h4">Tags</Typography>
+    <Helmet title={`Tags | ${title}`} />
+    <Box>
+      <Typography variant="h4">Tags</Typography>
 
-        {group.map((tag) => (
-          <Link key={tag.fieldValue} to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-            <Typography variant="body1" justify="center">
-              {tag.fieldValue} ({tag.totalCount})
-            </Typography>
-          </Link>
-        ))}
-      </Box>
-    </Container>
+      {group.map((tag) => (
+        <Link key={tag.fieldValue} to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+          <Typography variant="body1" justify="center">
+            {tag.fieldValue} ({tag.totalCount})
+          </Typography>
+        </Link>
+      ))}
+    </Box>
   </Layout>
 );
 

@@ -44,11 +44,17 @@ class BlogRoll extends React.Component {
                   </Typography>
                 </Box>
               </Box>
-              <Box mb={2} mx={2} display="flex" justifyContent="space between">
+              <Box
+                mt={1}
+                mb={2}
+                mx={2}
+                display="flex"
+                justifyContent="space between"
+              >
                 <Button
                   href={post.fields.slug}
                   variant="contained"
-                  color="primary"
+                  color="secondary"
                   disableElevation
                 >
                   Läs Mer

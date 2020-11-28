@@ -7,7 +7,7 @@ import Tooltip from "./Tooltip";
 function But(props) {
   return (
     <Grid item>
-      <Tooltip title={props.title}>
+      <Tooltip title={props.title} disableHoverListener>
         <Button variant="text" href={props.href}>
           {props.title}
         </Button>
@@ -18,14 +18,20 @@ function But(props) {
 
 export default function Navbar() {
   return (
-    <Grid container justify="center">
-      <But title="Nyheter" href="/" />
-      <But title="Digital Koldioxidbudget" href="/digital-budget" />
-      <But title="Skaffa En Koldioxidbudget" href="/get-budget" />
-      <But title="Om Oss" href="/about" />
-      <But title="Stöd Oss" href="/support" />
-      <But title="Kontakt" href="/contact" />
-    </Grid>
+    <Container>
+      <Box mt={2} display="flex" alignContent="flex-start">
+        <Link to="/">
+          <img src="/img/klimatsek.png" height="50px" width="184px" />
+        </Link>
+        <Grid container justify="center" alignItems="center">
+          <But title="Digital Koldioxidbudget" href="/digital-budget" />
+          <But title="Skaffa Koldioxidbudget" href="/get-budget" />
+          <But title="Om Oss" href="/about" />
+          <But title="Stöd Oss" href="/support" />
+          <But title="Kontakt" href="/contact" />
+        </Grid>
+      </Box>
+    </Container>
   );
 }
 
