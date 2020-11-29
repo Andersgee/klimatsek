@@ -26,12 +26,12 @@ export default class BlogIndexPage extends React.Component {
             <BlogRoll />
           </Grid>
           <Grid item xs={4}>
-            <Box bgcolor="#fff">
+            <Box boxShadow={1} bgcolor="#fff">
               <Typography>
                 <TwitterTimelineEmbed
                   sourceType="profile"
                   screenName="klimsek"
-                  options={{ height: "200vh" }}
+                  options={{ height: "120vh" }}
                   noHeader
                   noFooter
                   noBorders

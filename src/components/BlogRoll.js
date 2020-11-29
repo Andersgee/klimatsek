@@ -17,8 +17,9 @@ class BlogRoll extends React.Component {
         {posts.map(({ node: post }) => (
           <Grid item xs={12} lg={6} key={post.id}>
             <Box
-              bgcolor="#fff"
               height="100%"
+              bgcolor="#fff"
+              boxShadow={1}
               display="flex"
               justifyContent="space-between"
               flexDirection="column"
@@ -54,7 +55,7 @@ class BlogRoll extends React.Component {
                 <Button
                   href={post.fields.slug}
                   variant="contained"
-                  color="secondary"
+                  color="primary"
                   disableElevation
                 >
                   Läs Mer

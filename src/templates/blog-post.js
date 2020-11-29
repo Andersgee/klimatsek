@@ -61,7 +61,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <Container>
+      <Container maxWidth="sm">
         <BlogPostTemplate
           content={post.html}
           contentComponent={HTMLContent}
