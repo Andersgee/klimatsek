@@ -4,7 +4,6 @@ import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 import { Button, Box, Typography, Grid } from "@material-ui/core";
-import Card from "./Card";
 
 class BlogRoll extends React.Component {
   //post.frontmatter.featuredpost
@@ -26,12 +25,14 @@ class BlogRoll extends React.Component {
             >
               <Box>
                 {post.frontmatter.featuredimage && (
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                    }}
-                  />
+                  <Link to={post.fields.slug}>
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                      }}
+                    />
+                  </Link>
                 )}
                 <Box mx={2} mt={1}>
                   <Typography gutterBottom variant="h5" component="h2">
