@@ -15,8 +15,6 @@ tags:
 ---
 ![Nyköping först med digital koldioxidbudget](/img/nyköping-dubbel5.png "Nyköping först med digital koldioxidbudget")
 
-#### Nyköping först med digital koldioxidbudget
-
 Nyköpings kommun har skaffat koldioxidbudget. Man sällar sig därmed till det 30-tal kommuner som upprättat en lokal koldioxidbduget som ett led i sitt klimatarbete. Nyköping är dessutom första kommun att lansera verktyget Climate Visualizer på sin hemsida – och därmed först i Sverige med en digital Koldioxidbudget.
 
 2017 upprättade Järfälla som första svenska kommun en lokal koldioxidbudget. För beräkningarna stod Uppsala Universitet (UU). Sedan dess har intresset för lokal koldioxidbudgetering vuxit snabbt och idag har ett 30-tal kommuner, samt ytterligare ett antal regioner upprättat koldioxidbudgetar. 
@@ -30,6 +28,6 @@ Efter att kontakter knutits mellan Uppsala universitet och Klimatsekretariatet u
 
 #### Nyköping först ut
 
-**V**ärldspremiären för den digitala lokala koldioxidbudgeten ClimateVisualizer sker alltså i Nyköping.– Nyköping får nu framförallt en unik och kontinuerligt uppdaterad överblick över hur lång tid man har på sig att fasa ut utsläppen för att efterleva Parisavtalet, säger Johan Eklöf, produktchef Klimatsekretariatet, och fortsätter:\
+Världspremiären för den digitala lokala koldioxidbudgeten ClimateVisualizer sker alltså i Nyköping.– Nyköping får nu framförallt en unik och kontinuerligt uppdaterad överblick över hur lång tid man har på sig att fasa ut utsläppen för att efterleva Parisavtalet, säger Johan Eklöf, produktchef Klimatsekretariatet, och fortsätter:\
 – Nu ska vi samarbeta med Nyköping och utveckla interaktiva tjänster i verktyget, som möter kommunen och andra användares behov. Redan nu har dock budgeten förstärkt kommunens klimatarbete. \
 – Koldioxidbudgeten tydliggör för oss som arbetar i kommunen var vi behöver jobba och sätta in åtgärder, förklarar Maria Brantö, miljöstrateg på Nyköpings kommun. Det är också bra för alla som bor och verkar här att få en ökad kunskap om läget, då blir det lättare att agera, tillägger hon.
